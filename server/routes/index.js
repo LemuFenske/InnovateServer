@@ -6,9 +6,6 @@ const transporter = require('../Controllers/Mailer')
 
 
 
-// const PaymentController = require('../Controllers/PaymentsController')
-// const PaymentService = require ('../Services/PaymentsService')
-// const PaymentInatance = new PaymentController(new PaymentService())
 
 
 router.get('/', function(req, res, next) {
@@ -35,7 +32,7 @@ router.post('/send', async function (req, res) {
 
       const response = await transporter.sendMail({
           from: `"Innovate"`,
-          to: 'fenskelemu@gmail.com',
+          to: 'innovate.dev.web@gmail.com',
           subject: 'Innovate',
           text: messageBody,
       });
@@ -47,8 +44,4 @@ router.post('/send', async function (req, res) {
 });
 
 
-
-// router.post('/payment', function(req, res, next) {
-//   PaymentInatance.getPaymentLink(req, res);
-// });
 module.exports = router;
